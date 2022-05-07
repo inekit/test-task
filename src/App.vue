@@ -2,7 +2,6 @@
 <b-form-radio-group
         id="btn-radios-1"
         v-model="$store.state.mode"
-        
         :options="$store.state.modes.map((el)=>{return {text: el.join('-'), value: el}})"
         name="radios-btn-default"
         buttons
@@ -39,5 +38,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
 }
 </style>

@@ -2,14 +2,14 @@
   <div class="list">
       <b-button @click="shown=!shown">{{listName}}></b-button>
         <ul v-if="realListPosition<mode.length" :style="{ display: shown ? 'block': 'none' }">
-            <li v-for="data,i of Object.entries(iterableData)" :key="'eee'+i " >
+            <li v-for="data,i of Object.entries(iterableData)" :key="i">
                 <p>{{data?.[0] && data?.[0] !== 'undefined' ? data?.[0] : 'Остальные'}}</p>
                 <List :listPosition="realListPosition+1" :ulData="data?.[1]"/>
 
             </li>
         </ul>
         <ul v-if="realListPosition>=mode.length " :style="{ display: shown ? 'block': 'none' }">
-            <li v-for="data,i of ulData" :key="'eee'+i">
+            <li v-for="data,i of ulData" :key="'citizen'+i">
                 <p v-b-tooltip.hover :title="getCityData(data)">{{data.name}}</p>          
                 <b-tooltip triggers="hover">
                 </b-tooltip>  
