@@ -44,9 +44,11 @@ export default {
       getCityData(data){
           return this.$store.state.cities.find(el=>el.id=data.city_id)?.data
       },
+      //Группируем данные по заданному id категории 
+      //(прим - listPosition = 0 -> this.mode[listPosition] = "Страна", на выходе получаем {Россия: Подходящие граждане,...})
       initList (listPosition){
-
-        this.realListPosition = listPosition
+          
+        this.realListPosition = listPosition 
         this.iterableData = [];
 
         this.shown=this.listPosition === 0 ? true : false;
